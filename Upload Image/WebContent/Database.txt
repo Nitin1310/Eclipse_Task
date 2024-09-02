@@ -1,0 +1,14 @@
+create table KidsDress
+(
+category_id number(10),
+category varchar(20),
+pattern varchar(20),
+color varchar(20),
+Length number(4),
+price varchar(6),
+fabric varchar(20),
+ideal_for varchar(20),
+photo1 blob,
+photo2 blob,
+photo3 blob
+)

@@ -1,0 +1,58 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Music Era</title>
+<link href="CSS/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <%@include file="Header.html" %>
+    <div id="musicHeader">
+        <center>
+         <img src="Images/find.png" style="width: 24px; height: 24px;    margin-left: 5px; margin-top: 10px; position: absolute;"/>
+        <input type="text" name="Album" id="Album" placeholder="Search music by album name..."/>
+        <input type="submit" value="" id="search"style="background-image: url('Images/search.png');" /></center>
+        <br>
+       <center> <h1 style="color: white;">Music Era: A place to download, listen latest beats
+       <br>Which you like most. Feel free<br> and download free!</h1></center>
+    </div>
+   <center><div id="list">
+        <%
+       String Oracle="jdbc:oracle:thin:@localhost:1521:xe";
+        String Id = "System";
+        String pas="123";
+        Connection con;
+        try
+        {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            con=DriverManager.getConnection(Oracle+"",Id,pas);
+             String sql = "select * from SongsList";
+             Statement st = con.createStatement();
+             ResultSet rs= st.executeQuery(sql);
+             while(rs.next())
+             {
+                 %>
+                <center> <div>
+                   <a href="list.jsp?album=<%=rs.getString("Album") %>" ><%=rs.getString("Album") %></a>
+                   
+                 </div></center>
+                 <%
+             }
+        }
+        catch(Exception e)
+        {
+            %>
+            <h4><%=e %></h4>
+            <%
+        }
+        %>
+    </div></center>
+    <%@include file="Footer.html" %>
+</body>
+</html>

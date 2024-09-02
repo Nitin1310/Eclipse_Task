@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+body {
+    margin: 0px;
+    padding: 0px;
+    
+    font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
+    font-size: 13px;
+    line-height:1.5em; 
+    background-color: whitesmoke;
+}
+#main
+{
+	width: 85%;
+	height: 100%;
+	position: relative;
+	border: solid 1px gray;
+	box-shadow: 1px 2px 42px -8px gray;
+	border-radius: 10px 10px;
+	margin: 0px;
+	padding: 10px;
+	background: #e3e3e3;
+}
+#header
+{
+	width: 100%;
+	height: 200px;
+	border: 1px solid black;
+}
+#mid
+{
+	width:100%;
+	height: 500px;
+	border: 1px dotted;
+}
+#footer
+{
+	width:100%;
+	height: 70px;
+	border: 1px solid black;
+}

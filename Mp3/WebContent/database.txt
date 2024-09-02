@@ -1,0 +1,6 @@
+create table songs
+(
+Title varchar(20),
+Song BLOB,
+ReleaseOn varchar(12)
+);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>JavaBeans</display-name>
+    <servlet-mapping>
+        <servlet-name>Abc</servlet-name>
+        <url-pattern>/Abc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Xyz</servlet-name>
+        <url-pattern>/Xyz</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>WelcomePage.html</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>JavaBean</servlet-name>
+        <servlet-class>JavaBean</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Abc</servlet-name>
+        <servlet-class>Abc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Xyz</servlet-name>
+        <servlet-class>Xyz</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JavaBean</servlet-name>
+        <url-pattern>/JavaBean</url-pattern>
+    </servlet-mapping>
+</web-app>

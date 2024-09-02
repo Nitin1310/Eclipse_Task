@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewreport" content="width=device-width">
+<script language="JavaScript" type="text/javascript">
+function login(showhide){
+if(showhide == "show"){
+    document.getElementById('popDiv').style.display='block';
+}else if(showhide == "hide"){
+    document.getElementById('popDiv').style.display='none';
+}
+}
+function register(showhide){
+    if(showhide == "show"){
+        document.getElementById('regDiv').style.display='block';
+    }else if(showhide == "hide"){
+        document.getElementById('regDiv').style.display='none';
+    }
+    }
+</script>
+<link href="CSS/header.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="header">
+        <div id="img">
+            <img src="images/coder.png" style="width:100%; height:100%;"/>
+        </div>
+       <div id="menu">
+                <ul>
+                    <li><a href="CoderHub.jsp">Home</a></li>
+                    <li><a href="work.jsp">Work</a></li>
+                    <li><a href="howwork.jsp">How it work</a></li>
+                    <li><a href="AboutUs.jsp">About us</a></li>
+                    <li><a href="ContacUs.jsp">Contact us</a></li>
+                </ul>
+          </div>
+         
+          <div id="post">
+             <a href="postProjects.jsp" >Post a project</a>
+          </div>
+           <div id="login">
+                <a href="javascript:login('show');"  style="padding-right:20px;">LOGIN</a>
+                <a href="javascript:register('show');" >SIGNUP</a>
+          </div>
+          <div class="login">
+               <div id="popDiv" class="ontop"><a href="javascript:login('hide'); " class="cancel"  >&times;</a>
+               <div id="popupbox" ><div class="header" > 
+            <form name="login" action="authentication" method="post">
+             <p>
+            <input type="text" name="userid" id="userid" class="textbox" placeholder="name@example.com">
+    </p>
+
+    <p>
+          <input type="password" name="password" id="password" class="textbox" placeholder="password">
+    </p>
+
+    <p class="login-submit">
+      <button type="submit" id="button">Login</button>    
+     <a href="forgot.jsp" style="padding-left: 35px;">Forgot your password?</a></p>
+</form>
+<br />
+        </div></div></div> 
+        <div id="regDiv" class="back"><div id="main" class="register">
+        <a href="javascript:register('hide'); " class="cancel" >&times;</a>
+        <center><div style="margin-top: 60px;">
+        <form action="register" method="post">
+            <input type="text" class="textbox" name="email" placeholder="email id" /><br><br>
+            <input type="text"class="textbox"name = "user"placeholder="user id" maxlength="12"><//><br><br>
+            <input type="password"class="textbox"name = "pass"placeholder="password"/><br><br>
+            <input type="password"class="textbox"placeholder="confirm password"/><br><br>
+            <div style="width: 400px;"><div style="float:left;width:200px;height:35px; border: solid 1px #666;border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;box-shadow: 0px 0px 4px 0px #666;padding-top:10px;">
+            <input type="radio" name="account" value="Hire">Hire</div>
+            <div style="float:right;width:200px;height:35px;border: solid 1px #666;border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; margin-top:-47px;box-shadow: 0px 0px 4px 0px #666;margin-right: -3px;padding-top:10px;">
+            <input type="radio" name="account" value="Work">Work<br></div></div><br><br><br>
+            <input type="submit" value="Create Account" id="button"  name="reg"/></form></div></center>
+        </div>
+        </div>
+        
+        </div>
+          </div>
+    </div>
+</body>
+</html>
